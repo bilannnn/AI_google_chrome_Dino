@@ -305,6 +305,9 @@ if __name__ == "__main__":
 
     # init NEAT
     p = neat.Population(config)
+    p.add_reporter(neat.StdOutReporter(True))
+    stats = neat.StatisticsReporter()
+    p.add_reporter(stats)
 
     # run NEAT
     p.run(run_game, 1000)
